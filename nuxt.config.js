@@ -61,5 +61,19 @@ module.exports = {
     */
     extend (config, ctx) {
     }
+  },
+
+  generate: {
+    concurrency: 100,
+    devtools: true,
+    exclude: [
+      /^(?=.*\bignore\b).*$/
+    ],
+    fallback: true,
+    routes: [
+      '/recipes/1',
+      '/recipes/2',
+      '/recipes/3'
+    ]
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="display-3">
-      Recipe title
+      {{ title }}
     </h1>
     <img class="img-fluid" src="https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_900,q_auto:low/v1577283800/resopia.com/torta-de-jamon-y-queso-5.jpg">
     <p class="text-muted">
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import axios from 'Axios'
+// import axios from 'Axios'
 
 export default {
   validate ({ params }) {
@@ -65,9 +65,10 @@ export default {
     return /^\d+$/.test(params.id)
   },
 
-  async asyncData ({ params }) {
-    const { data } = await axios.get(`https://dog.ceo/api/breed/${params.breed}/images/random`)
-    return { breed: data.message, name: params.breed }
+  asyncData ({ params }) {
+    // const { data } = await axios.get(`https://dog.ceo/api/breed/${params.id}/images/random`)
+    // return { breed: data.message, name: params.breed }
+    return { title: 'recipe ' + params.id }
   }
 }
 </script>
