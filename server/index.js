@@ -29,5 +29,7 @@ async function start () {
     message: `Server listening on http://${host}:${port}`,
     badge: true
   })
+
+  console.info('Im the server')
 }
 start()

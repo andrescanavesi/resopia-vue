@@ -1,8 +1,24 @@
 <template>
   <div>
-    <nuxt />
+    <Menu />
+    <div class="container-fluid">
+      <nuxt />
+    </div>
+    <Footer />
   </div>
 </template>
+
+<script>
+import Menu from '~/components/Menu'
+import Footer from '~/components/Footer'
+
+export default {
+  components: {
+    Menu,
+    Footer
+  }
+}
+</script>
 
 <style>
 html {
