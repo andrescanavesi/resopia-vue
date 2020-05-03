@@ -65,7 +65,12 @@ export default {
     return /^\d+$/.test(params.id)
   },
 
-  asyncData ({ params }) {
+  asyncData ({ params, error, payload }) {
+    if (payload) {
+      // this is to optimize generation of static pages
+      return { user: payload }
+    }
+    // return { user: await backend.fetchUser(params.id) }
     // const { data } = await axios.get(`https://dog.ceo/api/breed/${params.id}/images/random`)
     // return { breed: data.message, name: params.breed }
     return { title: 'recipe ' + params.id }

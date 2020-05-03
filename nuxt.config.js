@@ -75,5 +75,16 @@ module.exports = {
       '/recipes/2',
       '/recipes/3'
     ]
+    // routes () {
+    //   return axios.get('https://my-api/users')
+    //     .then((res) => {
+    //       return res.data.map((user) => {
+    //         return {
+    //           route: '/users/' + user.id,
+    //           payload: user
+    //         }
+    //       })
+    //     })
+    // }
   }
 }

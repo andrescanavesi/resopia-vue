@@ -21,6 +21,23 @@ create-nuxt-app v2.15.0
 ? Choose rendering mode Universal (SSR)
 ? Choose development tools jsconfig.json (Recommended for VS Code)
 
+- Go to Firebase console and create a new project.
+- Register a new app
+- Add Firestore
+  - Add DB in test mode
+- Install Firebase in our app
+`npm install --save firebase`
+- Init Firebase project
+`firebase init`
+Follow the steps. Have in mind our public directory is `dist` andnot the default `public`
+- Build our project por productions environments
+`npm run build`
+- Deploy
+`firebase deploy`
+Open thebrowser in the generated url: https://gartic-eb730.web.app
+
+Since it's a PWA we can install it locally like any other app to use it offline
+
 # Build Setup
 
 ```bash
