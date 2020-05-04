@@ -25,6 +25,7 @@ create-nuxt-app v2.15.0
 - Register a new app
 - Add Firestore
   - Add DB in test mode
+- Create web app to get the api key.
 - Install Firebase in our app
 `npm install --save firebase`
 - Init Firebase project

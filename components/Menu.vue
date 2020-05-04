@@ -1,6 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <nuxt-link class="navbar-brand" to="/">
+      Recipes21
+    </nuxt-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,10 +18,14 @@
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <nuxt-link class="nav-link" to="/">
+            Home <span class="sr-only">(current)</span>
+          </nuxt-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <nuxt-link class="nav-link" to="/categories">
+            Categories
+          </nuxt-link>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -39,9 +45,6 @@
             <div class="dropdown-divider" />
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

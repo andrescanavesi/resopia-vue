@@ -5,27 +5,27 @@
     </h1>
     <img class="img-fluid" src="https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_900,q_auto:low/v1577283800/resopia.com/torta-de-jamon-y-queso-5.jpg">
     <p class="text-muted">
-      Description
+      Description.
     </p>
     <h2 class="display-4">
-      Ingredientes
+      Ingredients
     </h2>
     <ul class="list-group">
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        Ingrediente 1
+        Ingredient 1
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        Ingrediente 2
+        Ingredient 2
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        Ingrediente 3
+        Ingredient 3
       </li>
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        Ingrediente 4
+        Ingredient 4
       </li>
     </ul>
     <h2 class="display-4">
-      Elaboracion
+      Steps
     </h2>
     <ul class="list-group">
       <li class="list-group-item d-flex justify-content-between align-items-center">
