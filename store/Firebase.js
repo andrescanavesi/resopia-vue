@@ -1,10 +1,6 @@
-// import * as firebase from 'firebase/app'
-// const firebase = require('firebase')
+const firebase = require('firebase')
 // Required for side-effects
-// require('firebase/firestore')
-
-import * as firebase from 'firebase/app'
-import 'firebase/firestore'
+require('firebase/firestore')
 
 const config = {
   apiKey: 'AIzaSyDJwt6_p-4DHW-mWKxClupF41akMgspPCQ',
@@ -18,6 +14,8 @@ const config = {
 }
 if (!firebase.apps.length) {
   firebase.initializeApp(config)
+  // const settings = { timestampsInSnapshots: true }
+  // firebase.firestore().settings(settings)
 }
 
 // firebase.analytics()
