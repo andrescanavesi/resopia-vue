@@ -73,7 +73,8 @@ module.exports = {
     routes: [
       '/recipes/1',
       '/recipes/2',
-      '/recipes/3'
+      '/recipes/3',
+      '/search/chocolate'
     ]
     // routes () {
     //   return axios.get('https://my-api/users')
