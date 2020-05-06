@@ -1,14 +1,22 @@
 <template>
   <section class="mt-2">
-    <div>
-      Total: {{ total }}
-      <ul class="list-group">
-        <li v-for="recipe in recipes" :key="recipe.id" class="list-group-item d-flex justify-content-between align-items-center">
-          <nuxt-link :to="{ name: 'recipes-id', params: { id: recipe.id }}">
+    <div v-for="recipe in recipes" :key="recipe.id" class="card mb-1">
+      <div class="card-body">
+        <h5 class="card-title">
+          <nuxt-link class="card-link text-right mr-2 my-2" :to="{ name: 'recipes-id', params: { id: recipe.id }}">
             {{ recipe.title }}
           </nuxt-link>
-        </li>
-      </ul>
+        </h5>
+
+        <p class="card-text">
+          {{ recipe.description }}
+        </p>
+      </div>
+      <img class="img-fluid card-img-bottom px-2" src="https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_600,q_auto:low/v1577283800/resopia.com/torta-de-jamon-y-queso-5.jpg">
+
+      <nuxt-link class="card-link text-right mr-2 my-2" :to="{ name: 'recipes-id', params: { id: recipe.id }}">
+        More
+      </nuxt-link>
     </div>
   </section>
 </template>
@@ -33,7 +41,6 @@ export default {
       })
     })
     return {
-      total: recipes.length,
       recipes
     }
   }

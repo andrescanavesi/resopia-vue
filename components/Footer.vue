@@ -8,7 +8,7 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
           <!-- Form -->
-          <form class="form-inline">
+          <form class="form-inline d-none">
             <input
               class="form-control form-control-sm mr-3 w-75"
               type="text"
@@ -23,7 +23,7 @@
 
         <!--Grid column-->
         <div class="col-md-6 mb-4">
-          <form class="input-group">
+          <form class="input-group d-none">
             <input
               type="text"
               class="form-control form-control-sm"
