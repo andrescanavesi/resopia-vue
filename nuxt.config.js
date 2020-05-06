@@ -1,6 +1,3 @@
-
-import firebase from './store/Firebase'
-
 module.exports = {
   mode: 'universal',
   /*
@@ -46,13 +43,17 @@ module.exports = {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    './modules/firestore'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+  firestore: {
+
   },
   /*
   ** Build configuration
@@ -89,18 +90,16 @@ module.exports = {
     //       })
     //     })
     // }
-
     routes () {
-      const db = firebase.firestore()
-      return db.collection('recipes').get()
+      return firestore.collection('recipes').get()
         .then((res) => {
           const recipes = []
           res.forEach((doc) => {
             recipes.push({
               route: `/recipes/${doc.id}`
             })
+            return recipes
           })
-          return recipes
         })
     }
   }

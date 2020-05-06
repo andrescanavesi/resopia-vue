@@ -33,8 +33,8 @@ export default {
       })
     })
     return {
-      recipes,
-      total: recipes.length
+      total: recipes.length,
+      recipes
     }
   }
 }

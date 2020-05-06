@@ -19,5 +19,7 @@ if (!firebase.apps.length) {
 }
 
 // firebase.analytics()
+// const firestore = firebase.firestore();
 
 export default firebase
+// export default firestore;
