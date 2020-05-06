@@ -30,6 +30,8 @@
     "babel-jest": "^25.5.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
     "jest": "^25.5.4",
     "nodemon": "^2.0.3",
     "vue-jest": "^4.0.0-0"

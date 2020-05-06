@@ -1,4 +1,6 @@
 
+import firebase from './store/Firebase'
+
 module.exports = {
   mode: 'universal',
   /*
@@ -70,12 +72,12 @@ module.exports = {
       /^(?=.*\bignore\b).*$/
     ],
     fallback: true,
-    routes: [
-      '/recipes/1',
-      '/recipes/2',
-      '/recipes/3',
-      '/search/chocolate'
-    ]
+    // routes: [
+    //   '/recipes/1',
+    //   '/recipes/2',
+    //   '/recipes/3',
+    //   '/search/chocolate'
+    // ]
     // routes () {
     //   return axios.get('https://my-api/users')
     //     .then((res) => {
@@ -87,5 +89,19 @@ module.exports = {
     //       })
     //     })
     // }
+
+    routes () {
+      const db = firebase.firestore()
+      return db.collection('recipes').get()
+        .then((res) => {
+          const recipes = []
+          res.forEach((doc) => {
+            recipes.push({
+              route: `/recipes/${doc.id}`
+            })
+          })
+          return recipes
+        })
+    }
   }
 }

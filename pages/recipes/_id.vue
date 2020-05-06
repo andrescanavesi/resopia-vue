@@ -59,21 +59,40 @@
 <script>
 // import axios from 'Axios'
 
+import firebase from '~/store/Firebase'
+
 export default {
   validate ({ params }) {
     // Must be a number
     return /^\d+$/.test(params.id)
   },
 
-  asyncData ({ params, error, payload }) {
+  async asyncData ({ params, error, payload }) {
     if (payload) {
       // this is to optimize generation of static pages
-      return { user: payload }
+      return { recipe: payload }
     }
+    const db = firebase.firestore()
+    const docRef = await db.collection('recipes').doc(params.id)
+
+    try {
+      const doc = await docRef.get()
+      let result
+      if (doc.exists) {
+        result = doc.data()
+      } else {
+        // doc.data() will be undefined in this case
+        throw new Error('Recipe not found')
+      }
+      return result
+    } catch (e) {
+      throw new Error(`Error getting recipe. ${error.message}`)
+    }
+
     // return { user: await backend.fetchUser(params.id) }
     // const { data } = await axios.get(`https://dog.ceo/api/breed/${params.id}/images/random`)
     // return { breed: data.message, name: params.breed }
-    return { title: 'recipe ' + params.id }
+    // return { title: 'recipe ' + params.id }
   }
 }
 </script>
