@@ -1,6 +1,6 @@
 <template>
   <section class="mt-2">
-    <div v-for="recipe in recipes" :key="recipe.id" class="card mb-1">
+    <div v-for="recipe in recipes" :key="recipe.id" class="card mb-3">
       <div class="card-body">
         <h5 class="card-title">
           <nuxt-link class="card-link text-right mr-2 my-2" :to="{ name: 'recipes-id', params: { id: recipe.id }}">
@@ -37,7 +37,8 @@ export default {
     recipesCol.forEach((doc) => {
       recipes.push({
         id: doc.id,
-        title: doc.data().title
+        title: doc.data().title,
+        description: doc.data().description
       })
     })
     return {
