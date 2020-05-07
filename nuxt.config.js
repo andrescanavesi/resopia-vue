@@ -4,11 +4,11 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: process.env.RV_TITLE || 'Resopia Vue',
+    title: 'Recipes21',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.RV_DESCRIPTION || 'Resopia Vue' }
+      { hid: 'description', name: 'description', content: 'Recipes21 The best recipes for cooking' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -65,6 +65,9 @@ module.exports = {
     extend (config, ctx) {
     }
   },
+  serverMiddleware: [
+    '~/server/redirect301.js'
+  ],
 
   generate: {
     concurrency: 100,

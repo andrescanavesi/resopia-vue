@@ -31,15 +31,9 @@
 </template>
 
 <script>
-// import axios from 'Axios'
-
 import firebase from '~/store/Firebase'
 
 export default {
-  validate ({ params }) {
-    // Must be a number
-    return /^\d+$/.test(params.id)
-  },
 
   async asyncData ({ params, error, payload }) {
     if (payload) {
@@ -60,8 +54,23 @@ export default {
       }
       return result
     } catch (e) {
-      throw new Error(`Error getting recipe. ${error.message}`)
+      throw new Error(`Error getting the recipe. ${error.message}`)
     }
+  },
+  head () {
+    const pTitle = this.title
+    const pDescription = this.description
+    return {
+      title: `Recipe of ${pTitle}`,
+      meta: [
+        { hid: 'description', name: 'description', content: `Recipe of ${pTitle} - ${pDescription}` }
+      ]
+    }
+  },
+  validate ({ params }) {
+    // Must be a number
+    // return /^\d+$/.test(params.id)
+    return true
   }
 }
 </script>
