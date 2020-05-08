@@ -11,11 +11,12 @@
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      @click="hideMobileMenu = !hideMobileMenu"
     >
       <span class="navbar-toggler-icon" />
     </button>
 
-    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+    <div id="navbarSupportedContent" class="navbar-collapse" :class="{ collapse: hideMobileMenu }">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <nuxt-link class="nav-link" to="/">
@@ -27,6 +28,11 @@
             Categories
           </nuxt-link>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.facebook.com/recipes21com/">
+            Facebook
+          </a>
+        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0 d-none">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -37,3 +43,13 @@
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      hideMobileMenu: false
+    }
+  }
+}
+</script>
