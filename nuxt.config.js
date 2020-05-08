@@ -1,3 +1,6 @@
+// import firebase from '~/store/Firebase'
+const db = require('./store/Firebase')
+
 module.exports = {
   mode: 'universal',
   /*
@@ -43,8 +46,7 @@ module.exports = {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    './modules/firestore'
+    '@nuxtjs/pwa'
   ],
   /*
   ** Axios module configuration
@@ -52,13 +54,11 @@ module.exports = {
   */
   axios: {
   },
-  firestore: {
-
-  },
   /*
   ** Build configuration
   */
   build: {
+    analyze: true,
     /*
     ** You can extend webpack config here
     */
@@ -76,34 +76,16 @@ module.exports = {
       /^(?=.*\bignore\b).*$/
     ],
     fallback: true,
-    // routes: [
-    //   '/recipes/1',
-    //   '/recipes/2',
-    //   '/recipes/3',
-    //   '/search/chocolate'
-    // ]
-    // routes () {
-    //   return axios.get('https://my-api/users')
-    //     .then((res) => {
-    //       return res.data.map((user) => {
-    //         return {
-    //           route: '/users/' + user.id,
-    //           payload: user
-    //         }
-    //       })
-    //     })
-    // }
-    routes () {
-      return firestore.collection('recipes').get()
-        .then((res) => {
-          const recipes = []
-          res.forEach((doc) => {
-            recipes.push({
-              route: `/recipes/${doc.id}`
-            })
-            return recipes
-          })
-        })
+    async routes () {
+      const recipes = []
+      const recipesCol = await db.collection('recipes').get()
+      if (!recipesCol) {
+        throw new Error('No recipes found')
+      }
+      recipesCol.forEach((doc) => {
+        recipes.push({ route: `/recipes/${doc.id}` })
+      })
+      return recipes
     }
   }
 }

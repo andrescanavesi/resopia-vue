@@ -31,16 +31,17 @@
 </template>
 
 <script>
-import firebase from '~/store/Firebase'
+// import db from '~/store/Firebase'
+const db = require('~/store/Firebase')
 
 export default {
 
   async asyncData ({ params, error, payload }) {
-    if (payload) {
-      // this is to optimize generation of static pages
-      return { recipe: payload }
-    }
-    const db = firebase.firestore()
+    // if (payload) {
+    //   // this is to optimize generation of static pages
+    //   return { recipe: payload }
+    // }
+    // const db = firebase.firestore()
     const docRef = await db.collection('recipes').doc(params.id)
 
     try {

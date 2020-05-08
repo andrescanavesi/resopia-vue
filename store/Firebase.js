@@ -2,6 +2,9 @@ const firebase = require('firebase')
 // Required for side-effects
 require('firebase/firestore')
 
+// import firebase from 'firebase'
+// import 'firebase/firestore'
+
 const config = {
   apiKey: 'AIzaSyDJwt6_p-4DHW-mWKxClupF41akMgspPCQ',
   authDomain: 'recipes21.firebaseapp.com',
@@ -18,8 +21,13 @@ if (!firebase.apps.length) {
   // firebase.firestore().settings(settings)
 }
 
+const db = firebase.firestore()
+
 // firebase.analytics()
 // const firestore = firebase.firestore();
 
-export default firebase
+// export default firebase
 // export default firestore;
+// module.exports.firebase = firebase
+module.exports = db
+// export default db

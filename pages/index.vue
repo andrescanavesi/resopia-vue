@@ -24,13 +24,14 @@
 <script>
 
 // import axios from 'axios'
-import firebase from '~/store/Firebase'
+// import db from '~/store/Firebase'
+const db = require('~/store/Firebase')
 
 export default {
   async asyncData () {
     // const { data } = await axios.get('https://dog.ceo/api/breeds/list')
     // return { breeds: data.message }
-    const db = firebase.firestore()
+    // const db = firebase.firestore()
 
     const recipes = []
     const recipesCol = await db.collection('recipes').get()

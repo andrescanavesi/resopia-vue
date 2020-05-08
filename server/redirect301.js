@@ -4,8 +4,8 @@
 
 const redirects = [
   { from: '/recipe/76/fluffy-vanilla-cake', to: '/recipes/fluffy-vanilla-cake' },
-  { from: '/veryold', to: '/verynew' },
-  { from: '/too-old', to: '/new' }
+  { from: '/veryold', to: '/recipes/1' },
+  { from: '/too-old', to: '/recipes2' }
 ]
 export default function (req, res, next) {
   const redirect = redirects.find(r => r.from === req.url)
