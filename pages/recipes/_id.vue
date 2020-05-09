@@ -64,7 +64,9 @@ export default {
     return {
       title: `Recipe of ${pTitle}`,
       meta: [
-        { hid: 'description', name: 'description', content: `Recipe of ${pTitle} - ${pDescription}` }
+        { hid: 'description', name: 'description', content: `Recipe of ${pTitle} - ${pDescription}` },
+        { hid: 'og:description', name: 'og:description', content: `Recipe of ${pTitle} - ${pDescription}` },
+        { hid: 'og:title', name: 'og:title', content: `Recipe of ${pTitle}` }
       ]
     }
   },

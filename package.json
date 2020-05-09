@@ -12,6 +12,9 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
   },
+  "engines": {
+    "node": "10"
+  },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
@@ -20,7 +23,8 @@
     "cross-env": "^7.0.2",
     "express": "^4.16.4",
     "firebase": "^7.14.2",
-    "nuxt": "^2.12.2"
+    "nuxt": "^2.12.2",
+    "nuxt-start": "^2.12.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

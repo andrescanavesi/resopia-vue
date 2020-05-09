@@ -1,11 +1,16 @@
 const express = require('express')
 const consola = require('consola')
-const { Nuxt, Builder } = require('nuxt')
+// TODO evaluate nuxt-start https://medium.com/likecoin/quick-nuxt-js-ssr-prototyping-with-firebase-cloud-functions-5277553610a8
+// like this const { Nuxt, Builder } = require('nuxt-start')
+// https://www.npmjs.com/package/nuxt-start
+const { Nuxt, Builder } = require('nuxt-start')
 const app = express()
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
+// config.debug = process.env.NODE_ENV !== 'production'
+config.debug = true
 
 async function start () {
   // Init Nuxt.js
@@ -31,3 +36,5 @@ async function start () {
   })
 }
 start()
+
+module.exports = app

@@ -10,6 +10,12 @@
   },
   "hosting": {
     "public": "dist",
+    "rewrites": [
+      {
+        "source": "**/**",
+        "function": "nuxtjs-server"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
