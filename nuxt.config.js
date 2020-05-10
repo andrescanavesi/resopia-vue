@@ -49,13 +49,37 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/sitemap'
   ],
   googleAnalytics: {
     id: 'UA-139523568-1',
     debug: {
       enabled: true,
       sendHitTask: true
+    }
+  },
+  sitemap: {
+    hostname: 'https://recipes21.com',
+    gzip: true,
+    exclude: [
+      '/dashboard/**'
+    ],
+    defaults: {
+      changefreq: 'monthly',
+      priority: 1,
+      lastmod: new Date()
+    },
+    async routes () {
+      const recipes = []
+      const recipesCol = await db.collection('recipes').get()
+      if (!recipesCol) {
+        throw new Error('No recipes found')
+      }
+      recipesCol.forEach((doc) => {
+        recipes.push({ route: `/recipes/${doc.id}` })
+      })
+      return recipes
     }
   },
   /*
