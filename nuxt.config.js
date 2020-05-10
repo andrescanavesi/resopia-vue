@@ -48,8 +48,16 @@ module.exports = {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/google-analytics'
   ],
+  googleAnalytics: {
+    id: 'UA-139523568-1',
+    debug: {
+      enabled: true,
+      sendHitTask: true
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -68,7 +76,7 @@ module.exports = {
     }
   },
   serverMiddleware: [
-    '~/server/redirect301.js'
+    '~/middleware/redirect301.js'
   ],
 
   generate: {

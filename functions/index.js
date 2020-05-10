@@ -11,6 +11,7 @@ const expressServer = express();
 
 const config = {
   dev: process.env.NODE_ENV !== "production",
+  debug: true,
   buildDir: "dist/client",
 };
 

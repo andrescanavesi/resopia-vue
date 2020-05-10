@@ -24,18 +24,20 @@
     "express": "^4.16.4",
     "firebase": "^7.14.2",
     "nuxt": "^2.12.2",
-    "nuxt-start": "^2.12.2"
+    "@babel/core": "^7.4.5",
+    "core-js": "^2.6.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/google-analytics": "^2.2.3",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^25.5.1",
     "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-nuxt": ">=0.4.2",
     "jest": "^25.5.4",
     "nodemon": "^2.0.3",
     "vue-jest": "^4.0.0-0"

@@ -3,7 +3,7 @@ const consola = require('consola')
 // TODO evaluate nuxt-start https://medium.com/likecoin/quick-nuxt-js-ssr-prototyping-with-firebase-cloud-functions-5277553610a8
 // like this const { Nuxt, Builder } = require('nuxt-start')
 // https://www.npmjs.com/package/nuxt-start
-const { Nuxt, Builder } = require('nuxt-start')
+const { Nuxt, Builder } = require('nuxt')
 const app = express()
 
 // Import and Set Nuxt.js options
