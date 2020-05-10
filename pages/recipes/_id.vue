@@ -59,14 +59,13 @@ export default {
     }
   },
   head () {
-    const pTitle = this.title
-    const pDescription = this.description
+    const recipe = this
     return {
-      title: `Recipe of ${pTitle}`,
+      title: `Recipe of ${recipe.title}`,
       meta: [
-        { hid: 'description', name: 'description', content: `Recipe of ${pTitle} - ${pDescription}` },
-        { hid: 'og:description', name: 'og:description', content: `Recipe of ${pTitle} - ${pDescription}` },
-        { hid: 'og:title', name: 'og:title', content: `Recipe of ${pTitle}` }
+        { hid: 'description', name: 'description', content: `Recipe of ${recipe.title} - ${recipe.description}` },
+        { hid: 'og:description', name: 'og:description', content: `Recipe of ${recipe.title} - ${recipe.description}` },
+        { hid: 'og:title', name: 'og:title', content: `Recipe of ${recipe.title}` }
       ]
     }
   },
