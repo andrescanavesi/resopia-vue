@@ -12,7 +12,7 @@
           {{ recipe.description }}
         </p>
       </div>
-      <img class="img-fluid card-img-bottom px-2" src="https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_600,q_auto:low/v1577283800/resopia.com/torta-de-jamon-y-queso-5.jpg">
+      <img :src="`${recipe.primary_image}`" class="img-fluid card-img-bottom px-2">
 
       <nuxt-link class="card-link text-right mr-2 my-2" :to="{ name: 'recipes-id', params: { id: recipe.id }}">
         More
@@ -36,10 +36,15 @@ export default {
     const recipes = []
     const recipesCol = await db.collection('recipes').get()
     recipesCol.forEach((doc) => {
+      let image = process.env.NUXT_ENV_R21_IMAGES_BASE_URL + 'default.jpg'
+      if (doc.data().primary_image) {
+        image = process.env.NUXT_ENV_R21_IMAGES_BASE_URL + doc.data().primary_image
+      }
       recipes.push({
         id: doc.id,
         title: doc.data().title,
-        description: doc.data().description
+        description: doc.data().description,
+        primary_image: image
       })
     })
     return {

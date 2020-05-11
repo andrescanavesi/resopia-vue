@@ -3,7 +3,7 @@
     <h1 class="display-3">
       {{ title }}
     </h1>
-    <img class="img-fluid" src="https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_600,q_auto:low/v1577283800/resopia.com/torta-de-jamon-y-queso-5.jpg">
+    <img :src="`${primary_image}`" class="img-fluid">
     <p class="text-muted">
       {{ description }}
     </p>
@@ -26,7 +26,7 @@
         {{ value }}
       </li>
     </ul>
-    <img class="img-fluid" src="https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_600,q_auto:low/v1577283800/resopia.com/torta-de-jamon-y-queso-1.jpg">
+    <img :src="`${secondary_image}`" class="img-fluid">
   </div>
 </template>
 
@@ -46,16 +46,20 @@ export default {
 
     try {
       const doc = await docRef.get()
-      let result
+      let recipe
       if (doc.exists) {
-        result = doc.data()
+        recipe = doc.data()
+        const imagesUrl = process.env.NUXT_ENV_R21_IMAGES_BASE_URL
+        const def = imagesUrl + 'default.jpg'
+        recipe.primary_image = recipe.primary_image ? imagesUrl + recipe.primary_image : def
+        recipe.secondary_image = recipe.secondary_image ? imagesUrl + recipe.secondary_image : def
       } else {
         // doc.data() will be undefined in this case
         throw new Error('Recipe not found')
       }
-      return result
+      return recipe
     } catch (e) {
-      throw new Error(`Error getting the recipe. ${error.message}`)
+      throw new Error(`Error getting the recipe. ${e.message}`)
     }
   },
   head () {

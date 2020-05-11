@@ -55,8 +55,8 @@ module.exports = {
   googleAnalytics: {
     id: 'UA-139523568-1',
     debug: {
-      enabled: true,
-      sendHitTask: true
+      enabled: false,
+      sendHitTask: false
     }
   },
   sitemap: {
@@ -121,5 +121,9 @@ module.exports = {
       })
       return recipes
     }
+  },
+
+  env: {
+    NUXT_ENV_R21_IMAGES_BASE_URL: process.env.NUXT_ENV_R21_IMAGES_BASE_URL || 'https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_900,q_auto:low/v1564258209/recipes21/'
   }
 }
