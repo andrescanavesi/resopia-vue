@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-dark bg-dark">
     <nuxt-link class="navbar-brand" to="/">
       Recipes21
     </nuxt-link>
@@ -48,7 +48,7 @@
 export default {
   data () {
     return {
-      hideMobileMenu: false
+      hideMobileMenu: true
     }
   }
 }
