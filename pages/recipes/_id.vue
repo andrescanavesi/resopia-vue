@@ -32,7 +32,7 @@
 
 <script>
 // import db from '~/store/Firebase'
-const db = require('~/store/Firebase')
+const { db } = require('~/store/Firebase')
 
 export default {
 

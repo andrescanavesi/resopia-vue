@@ -25,13 +25,11 @@
 
 // import axios from 'axios'
 // import db from '~/store/Firebase'
-const db = require('~/store/Firebase')
+const { db, auth } = require('~/store/Firebase')
 
 export default {
   async asyncData () {
-    // const { data } = await axios.get('https://dog.ceo/api/breeds/list')
-    // return { breeds: data.message }
-    // const db = firebase.firestore()
+    console.info('auth data ', auth)
 
     const recipes = []
     const recipesCol = await db.collection('recipes').get()
