@@ -2,11 +2,8 @@ const firebase = require('firebase')
 // Required for side-effects
 require('firebase/firestore')
 
-// import firebase from 'firebase'
-// import 'firebase/firestore'
-
 const config = {
-  apiKey: 'AIzaSyDJwt6_p-4DHW-mWKxClupF41akMgspPCQ',
+  apiKey: process.env.NUXT_ENV_R21_FIREBASE_API_KEY,
   authDomain: 'recipes21.firebaseapp.com',
   databaseURL: 'https://recipes21.firebaseio.com',
   projectId: 'recipes21',
@@ -17,17 +14,8 @@ const config = {
 }
 if (!firebase.apps.length) {
   firebase.initializeApp(config)
-  // const settings = { timestampsInSnapshots: true }
-  // firebase.firestore().settings(settings)
 }
 
 const db = firebase.firestore()
 
-// firebase.analytics()
-// const firestore = firebase.firestore();
-
-// export default firebase
-// export default firestore;
-// module.exports.firebase = firebase
 module.exports = db
-// export default db
