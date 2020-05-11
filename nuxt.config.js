@@ -50,7 +50,8 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/google-adsense'
   ],
   googleAnalytics: {
     id: 'UA-139523568-1',
@@ -58,6 +59,13 @@ module.exports = {
       enabled: false,
       sendHitTask: false
     }
+  },
+  'google-adsense': {
+    id: 'ca-pub-9559827534748081',
+    pageLevelAds: true,
+    analyticsUacct: 'UA-139523568-1',
+    analyticsDomainName: 'recipes21.com',
+    test: true
   },
   sitemap: {
     hostname: 'https://recipes21.com',
