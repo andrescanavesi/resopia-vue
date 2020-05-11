@@ -77,6 +77,52 @@ export default {
     // Must be a number
     // return /^\d+$/.test(params.id)
     return true
+  },
+
+  jsonld () {
+    const recipe = this
+    let recipeInstructions = []
+    if (recipe.steps) {
+      recipeInstructions = recipe.steps.map((step) => {
+        const jsonD = {
+          '@type': 'HowToStep',
+          text: step
+        }
+        return jsonD
+      })
+    }
+
+    return {
+      '@context': 'http://schema.org',
+      '@type': 'recipe',
+      name: recipe.title,
+      description: recipe.description,
+      keywords: recipe.keywords || 'recipe',
+      datePublished: recipe.date_published || '2020-05-03',
+      dateModified: recipe.date_modified || '2020-05-03',
+      image: [
+        recipe.primary_image
+      ],
+      recipeIngredient: recipe.ingredients,
+      recipeInstructions,
+      author: {
+        '@type': 'Organization',
+        name: 'recipes21.com'
+      },
+      prepTime: recipe.prep_time || 'PT10M',
+      cookTime: recipe.cook_time || 'PT20M',
+      totalTime: recipe.total_time || 'PT30M',
+      recipeCuisine: recipe.cusine || 'American',
+      recipeCategory: recipe.category || 'American',
+      recipeYield: recipe.yield || '6 portions',
+      video: '',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: recipe.rating_value || 4.3,
+        ratingCount: recipe.rating_count || 31
+      }
+
+    }
   }
 }
 </script>
