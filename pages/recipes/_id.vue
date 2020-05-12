@@ -31,8 +31,7 @@
 </template>
 
 <script>
-// import db from '~/store/Firebase'
-const { db } = require('~/store/Firebase')
+const { fireDb } = require('~/plugins/firebase')
 
 export default {
 
@@ -42,7 +41,7 @@ export default {
     //   return { recipe: payload }
     // }
     // const db = firebase.firestore()
-    const docRef = await db.collection('recipes').doc(params.id)
+    const docRef = await fireDb.collection('recipes').doc(params.id)
 
     try {
       const doc = await docRef.get()

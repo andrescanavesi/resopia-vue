@@ -1,6 +1,11 @@
 <template>
-  <div>
-    <div id="firebaseui-auth-container" />
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        Login
+      </h5>
+      <div id="firebaseui-auth-container" />
+    </div>
   </div>
 </template>
 <script>

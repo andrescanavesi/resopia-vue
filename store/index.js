@@ -19,6 +19,6 @@ export const actions = {
       .then(() => {
         commit('setUser', null)
       })
-      .catch(err => console.error(err))
+      .catch(err => console.error('Store error', err))
   }
 }

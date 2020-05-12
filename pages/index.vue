@@ -23,16 +23,12 @@
 
 <script>
 
-// import axios from 'axios'
-// import db from '~/store/Firebase'
-const { db, auth } = require('~/store/Firebase')
+const { fireDb } = require('~/plugins/firebase')
 
 export default {
   async asyncData () {
-    console.info('auth data ', auth)
-
     const recipes = []
-    const recipesCol = await db.collection('recipes').get()
+    const recipesCol = await fireDb.collection('recipes').get()
     recipesCol.forEach((doc) => {
       let image = process.env.NUXT_ENV_R21_IMAGES_BASE_URL + 'default.jpg'
       if (doc.data().primary_image) {

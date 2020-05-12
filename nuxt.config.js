@@ -1,5 +1,4 @@
-// import firebase from '~/store/Firebase'
-const db = require('./store/Firebase')
+const { fireDb } = require('~/plugins/firebase')
 
 module.exports = {
   mode: 'universal',
@@ -89,7 +88,7 @@ module.exports = {
     },
     async routes () {
       const recipes = []
-      const recipesCol = await db.collection('recipes').get()
+      const recipesCol = await fireDb.collection('recipes').get()
       if (!recipesCol) {
         throw new Error('No recipes found')
       }
@@ -129,7 +128,7 @@ module.exports = {
     fallback: true,
     async routes () {
       const recipes = []
-      const recipesCol = await db.collection('recipes').get()
+      const recipesCol = await fireDb.collection('recipes').get()
       if (!recipesCol) {
         throw new Error('No recipes found')
       }
