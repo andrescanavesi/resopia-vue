@@ -4,7 +4,7 @@ require('firebase/firestore')
 require('firebase/auth')
 
 const config = {
-  apiKey: process.env.NUXT_ENV_R21_FIREBASE_API_KEY || 'AIzaSyDJwt6_p-4DHW-mWKxClupF41akMgspPCQ',
+  apiKey: process.env.NUXT_ENV_R21_FIREBASE_API_KEY,
   authDomain: 'recipes21.firebaseapp.com',
   databaseURL: 'https://recipes21.firebaseio.com',
   projectId: 'recipes21',

@@ -46,6 +46,8 @@ export default {
   },
   methods: {
     login () {
+      const e = this.email
+      const pass = this.password
       //
       // TODO work in progress
       //
@@ -56,7 +58,9 @@ export default {
           // if a user forgets to sign out.
           // ...
           // New sign-in will be persisted with session persistence.
-          return auth.signInWithEmailAndPassword(this.email, this.password)
+          return auth.signInWithEmailAndPassword(e, pass)
+        }).then(function (result) {
+          console.info('login result', result)
         })
         .catch(function (error) {
           console.error(error)
@@ -75,7 +79,7 @@ export default {
           // const isAnonymous = user.isAnonymous
           // const uid = user.uid
           // const providerData = user.providerData
-          console.info('user signed it', user.displayName)
+          console.info('user signed in', user.email)
 
           // TODO store use vuex and display info in the menu bar
         } else {
