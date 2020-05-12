@@ -140,7 +140,6 @@ module.exports = {
   },
 
   env: {
-    NUXT_ENV_R21_IMAGES_BASE_URL: process.env.NUXT_ENV_R21_IMAGES_BASE_URL || 'https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_900,q_auto:low/v1564258209/recipes21/',
-    NUXT_ENV_R21_FIREBASE_API_KEY: process.env.NUXT_ENV_R21_FIREBASE_API_KEY || 'AIzaSyDJwt6_p-4DHW-mWKxClupF41akMgspPCQ'
+    NUXT_ENV_R21_IMAGES_BASE_URL: process.env.NUXT_ENV_R21_IMAGES_BASE_URL || 'https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_900,q_auto:low/v1564258209/recipes21/'
   }
 }
