@@ -27,6 +27,7 @@
     "cross-env": "^7.0.2",
     "express": "^4.16.4",
     "firebase": "^7.14.2",
+    "firebaseui": "^4.5.0",
     "nuxt": "^2.12.2",
     "nuxt-jsonld": "^1.4.9"
   },

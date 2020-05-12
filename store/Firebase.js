@@ -1,3 +1,5 @@
+// TODO move code to /plugins
+
 const firebase = require('firebase')
 // Required for side-effects
 require('firebase/firestore')
@@ -20,7 +22,9 @@ if (!firebase.apps.length) {
 const db = firebase.firestore()
 const auth = firebase.auth()
 const persistenceSession = firebase.auth.Auth.Persistence.LOCAL
+const authProviderId = firebase.auth.EmailAuthProvider.PROVIDER_ID
 
 // TODO see Firebase UI https://firebase.google.com/docs/auth/web/firebaseui
+// FirebasUI example: https://github.com/ncwoehler/nuxt-firebaseui-starter
 
-module.exports = { db, auth, persistenceSession }
+module.exports = { db, auth, persistenceSession, authProviderId }
