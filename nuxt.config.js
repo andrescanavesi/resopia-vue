@@ -1,4 +1,4 @@
-const { fireDb } = require('~/plugins/firebase')
+const { fireDb } = require('./plugins/firebase')
 
 module.exports = {
   mode: 'universal',
