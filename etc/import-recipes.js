@@ -20,13 +20,13 @@ for (let i = 0; i < recipesModule.recipes.length; i++) {
     prep_time_seo: 'PT20M',
     cook_time_seo: 'PT30M',
     total_time_seo: 'PT50M',
-    prep_time: '20 minutes',
-    cook_time: '30 minutes',
-    total_time: '50 minutes',
+    prep_time: '20',
+    cook_time: '30',
+    total_time: '50',
     cuisine: 'American',
     yield: '5 servings',
     ingredients: element.ingredients.split('\n').map(elem => elem.trim()),
-    steps: element.steps.split('.').map(elem => elem.trim())
+    steps: element.steps.trim().split('.').map(elem => elem.trim())
   }
   result.push(recipe)
 

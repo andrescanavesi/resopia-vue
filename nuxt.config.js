@@ -11,7 +11,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Recipes21 The best recipes for cooking' },
-      { 'http-equiv': 'cache-control', content: 'public, max-age=50000' },
+      { hid: 'cache-control', name: 'cache-control', content: 'public max-age=2592000' },
       { name: 'robots', content: 'Index, Follow' },
       { hid: 'og:author', name: 'og:author', content: 'recipes21.com' },
       { hid: 'og:site_name', name: 'og:site_name', content: 'recipes21.com' },
@@ -59,7 +59,8 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-adsense'
+    '@nuxtjs/google-adsense',
+    'nuxt-lazy-load'
   ],
   googleAnalytics: {
     id: 'UA-139523568-1',
@@ -141,5 +142,11 @@ module.exports = {
 
   env: {
     NUXT_ENV_R21_IMAGES_BASE_URL: process.env.NUXT_ENV_R21_IMAGES_BASE_URL || 'https://res.cloudinary.com/dniiru5xy/image/upload/c_scale,w_900,q_auto:low/v1564258209/recipes21/'
+  },
+
+  render: {
+    static: {
+      maxAge: 1000 * 60 * 60 * 24 * 7
+    }
   }
 }
