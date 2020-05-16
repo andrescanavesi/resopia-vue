@@ -74,7 +74,7 @@ module.exports = {
     pageLevelAds: true,
     analyticsUacct: 'UA-139523568-1',
     analyticsDomainName: 'recipes21.com',
-    test: true
+    test: false
   },
   sitemap: {
     hostname: 'https://recipes21.com',

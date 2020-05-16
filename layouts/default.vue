@@ -2,7 +2,11 @@
   <div>
     <Menu />
     <div class="container-fluid">
-      <nuxt />
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <nuxt />
+        </div>
+      </div>
     </div>
     <Footer />
   </div>

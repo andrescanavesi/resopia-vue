@@ -10,7 +10,7 @@ for (let i = 0; i < recipesModule.recipes.length; i++) {
     id: element.title_for_url,
     title: element.title,
     description: element.description,
-    keywords: element.keywords,
+    keywords: element.keywords.split(',').map(elem => elem.trim()).filter(elem => elem.length > 0),
     active: true,
     primary_image: element.featured_image_name,
     secondary_image: 'default.jpg',
@@ -25,8 +25,8 @@ for (let i = 0; i < recipesModule.recipes.length; i++) {
     total_time: '50',
     cuisine: 'American',
     yield: '5 servings',
-    ingredients: element.ingredients.split('\n').map(elem => elem.trim()),
-    steps: element.steps.trim().split('.').map(elem => elem.trim())
+    ingredients: element.ingredients.split('\n').map(elem => elem.trim()).filter(elem => elem.length > 0),
+    steps: element.steps.trim().split('.').map(elem => elem.trim()).filter(elem => elem.length > 0)
   }
   result.push(recipe)
 
@@ -40,9 +40,7 @@ result.forEach((element) => {
   fireDb.collection('recipes').doc(element.id).set(element)
     .then((res) => {
       console.log('Document ' + element.id + ' successfully written!')
-      // process.exit(0)
     }).catch((error) => {
       console.error('Error writing document: ', error)
-      // process.exit(0)
     })
 })

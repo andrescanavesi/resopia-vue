@@ -45,7 +45,7 @@
     <!-- Footer Elements -->
 
     <!-- Copyright -->
-    <div class="bg-dark text-center text-white py-3">
+    <div class="bg-dark text-center text-white py-5">
       © 2020 Copyright
       <a href="https://recipes21.com/"> recipes21.com</a>
     </div>
