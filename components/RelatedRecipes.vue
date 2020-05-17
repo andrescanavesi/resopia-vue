@@ -1,7 +1,12 @@
 <template>
   <div class="relatedRecipes">
     <h3>Related recipes</h3>
-    <div v-for="relatedRecipe in related" :key="relatedRecipe.id" class="card border-0 mb-3" style="max-width: 540px;">
+    <div
+      v-for="relatedRecipe in related"
+      :key="relatedRecipe.id"
+      class="card border-0 mb-3"
+      style="max-width: 540px;"
+    >
       <div class="row no-gutters">
         <div class="col-4" style="width: 390px;">
           <img class="card-img" :src="`${relatedRecipe.primary_image}`">
