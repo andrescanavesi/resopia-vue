@@ -14,6 +14,12 @@
       </div>
       <img :src="`${recipe.primary_image}`" class="img-fluid card-img-bottom px-2">
 
+      <div class="d-flex flex-row bd-highlight mt-3 ml-3">
+        <span v-for="keyword in recipe.keywords" :key="keyword" class="badge badge-secondary mr-1">
+          {{ keyword }}
+        </span>
+      </div>
+
       <nuxt-link class="card-link text-right mr-2 my-2" :to="{ name: 'recipes-id', params: { id: recipe.id }}">
         More
       </nuxt-link>
@@ -38,6 +44,7 @@ export default {
         id: doc.id,
         title: doc.data().title,
         description: doc.data().description,
+        keywords: doc.data().keywords,
         primary_image: image
       })
     })
