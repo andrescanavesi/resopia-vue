@@ -14,6 +14,7 @@ module.exports = {
       { hid: 'cache-control', name: 'cache-control', content: 'public max-age=2592000' },
       { name: 'robots', content: 'Index, Follow' },
       { hid: 'og:author', name: 'og:author', content: 'recipes21.com' },
+      { hid: 'author', name: 'author', content: 'recipes21.com' },
       { hid: 'og:site_name', name: 'og:site_name', content: 'recipes21.com' },
       { hid: 'og:locale', name: 'og:locale', content: 'en_EN' },
       { hid: 'og:type', name: 'og:type', content: 'article' },
@@ -65,8 +66,8 @@ module.exports = {
   googleAnalytics: {
     id: 'UA-139523568-1',
     debug: {
-      enabled: false,
-      sendHitTask: false
+      enabled: true,
+      sendHitTask: true
     }
   },
   'google-adsense': {
